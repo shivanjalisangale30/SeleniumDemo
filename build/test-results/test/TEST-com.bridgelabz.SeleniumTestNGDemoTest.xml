@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.SeleniumTestNGDemoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-01-09T07:47:03" hostname="admin1-desktop" time="0.007">
+  <properties/>
+  <testcase name="setup" classname="com.bridgelabz.SeleniumTestNGDemoTest" time="0.005"/>
+  <testcase name="login" classname="com.bridgelabz.SeleniumTestNGDemoTest" time="0.0"/>
+  <testcase name="logout" classname="com.bridgelabz.SeleniumTestNGDemoTest" time="0.0"/>
+  <system-out><![CDATA[This is setup Test.
+This is login Test.
+This is closing browser
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
