@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -18,7 +17,7 @@ public class FacebookSeleniumTest extends BaseClass {
     String facebookURL = "https://www.facebook.com";
 
     @Test
-    public void CaptureScreenshot_ActiTIMEPage() throws IOException{
+    public void CaptureScreenshot_ActiTIMEPage() throws IOException {
         Date date = new Date();
         String date1 = date.toString();
         String date2 = date.toString().replaceAll(":", "-");
@@ -27,7 +26,8 @@ public class FacebookSeleniumTest extends BaseClass {
         driver.get(facebookURL);
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-        String imageName = new Object() {}.getClass().getEnclosingMethod().getName();
+        String imageName = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         File desFile = new File("/home/admin1/Desktop/SeleniumDemo/Screenshotes/" + date2 + imageName + ".jpg");
         FileUtils.copyFile(srcFile, desFile);
     }
@@ -122,11 +122,11 @@ public class FacebookSeleniumTest extends BaseClass {
         //xPath for user
         String xpUser = "//input[@id='email']";
         Thread.sleep(2000);
-        driver.findElement(By.xpath(xpUser)).sendKeys("9869191658");
+        driver.findElement(By.xpath(xpUser)).sendKeys("98745621");
         Thread.sleep(2000);
         //xPath for pwd
         String xpPWD = "//input[@id='pass']";
-        driver.findElement(By.xpath(xpPWD)).sendKeys("sonu&12345");
+        driver.findElement(By.xpath(xpPWD)).sendKeys("795241");
         Thread.sleep(2000);
         //xPath for image
         String xpImage = "//div[@class='_5iyy']//img[@class='img']";
@@ -141,40 +141,46 @@ public class FacebookSeleniumTest extends BaseClass {
         Thread.sleep(2000);
     }
 
+
+    @Test
+    public void LocatorsExample_For_Logout() throws InterruptedException, IOException {
+        driver.get(facebookURL);
+        //xPath for user
+        String xpUser = "//input[@id='email']";
+        driver.findElement(By.xpath(xpUser)).sendKeys("987465");
+        //xPath for pwd
+        String xpPWD = "//input[@id='pass']";
+        driver.findElement(By.xpath(xpPWD)).sendKeys("987546");
+        //xPath for login
+        String xpLogin = "//input[@id='u_0_b']";
+        driver.findElement(By.xpath(xpLogin)).click();
+        Thread.sleep(2000);
+        //xPath for nevigational panel
+        String xpNP = "//div[@id='userNavigationLabel']";
+        driver.findElement(By.xpath(xpNP)).click();
+        Thread.sleep(2000);
+        //xPath for logout
+        String xpLogout = "//li[@classubllem']";
+        driver.findElement(By.xpath(xpLogout)).click();
+        Thread.sleep(2000);
+    }
+
     @Test
     public void LocatorsExample_For_Alert() throws InterruptedException, IOException {
         driver.get(facebookURL);
         //xPath for user
         String xpUser = "//input[@id='email']";
-        driver.findElement(By.xpath(xpUser)).sendKeys("9869191658");
+        driver.findElement(By.xpath(xpUser)).sendKeys("895");
         //xPath for pwd
         String xpPWD = "//input[@id='pass']";
-        driver.findElement(By.xpath(xpPWD)).sendKeys("sonu&12345");
+        driver.findElement(By.xpath(xpPWD)).sendKeys("13456");
         //xPath for login
         String xpLogin = "//input[@id='u_0_b']";
         driver.findElement(By.xpath(xpLogin)).click();
-//        WebElement permission = driver.findElement(By.cssSelector("#permissionHeader"));
         Actions action = new Actions(driver);
         WebElement block = driver.findElement(By.xpath("//input[@id'permissionHeader']"));
         action.click(block).perform();
-
-//        System.out.println("Permissiion Header"+permissionHeader);
-//        driver.switchTo().alert().dismiss();
     }
-
 }
-//md-select
-//    //xPath for image
-//    String xpImage = "//div[@class='_5iyy']//img[@class='img']";
-//    WebElement image = driver.findElement(By.xpath(xpImage));
-//    String widthImage = image.getAttribute("width");
-//        System.out.println("Width of the image is " + widthImage);
-//                String heightImage = image.getAttribute("height");
-//                System.out.println("Height of the image is " + heightImage);
 
-//        Thread.sleep(5000);
-//        TakesScreenshot captueIamge = (TakesScreenshot) driver;
-//        File srcFile = captueIamge.getScreenshotAs(OutputType.FILE);
-//        String imageCapture = new Object() {}.getClass().getEnclosingMethod().getName();
-//        File desFile = new File("/home/admin1/Desktop/SeleniumDemo/Screenshotes/"+imageCapture+".jpg");
-//        FileUtils.copyFile(srcFile,desFile);
+

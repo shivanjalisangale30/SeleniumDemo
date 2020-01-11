@@ -12,7 +12,8 @@ import java.io.IOException;
 
 public class WriteToExcelFile {
 
-    private static final String FILE_NAME = "/home/admin1/Desktop/SeleniumDemo/ExcelFiles/DemoExcel.xlsx";
+    public static String excelName = new Object(){}.getClass().getEnclosingClass().getSimpleName();
+    public static final String excelFileName = "/home/admin1/Desktop/SeleniumDemo/ExcelFiles/"+excelName+".xlsx";
 
     @Test
     public void writeIntoExcel() {
@@ -42,7 +43,7 @@ public class WriteToExcelFile {
         }
 
         try {
-            FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
+            FileOutputStream outputStream = new FileOutputStream(excelFileName);
             workbook.write(outputStream);
             workbook.close();
         } catch (FileNotFoundException e) {
