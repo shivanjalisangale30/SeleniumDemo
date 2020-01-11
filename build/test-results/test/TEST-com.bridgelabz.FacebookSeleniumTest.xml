@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.FacebookSeleniumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-11T10:00:39" hostname="admin1-desktop" time="30.454">
+  <properties/>
+  <testcase name="LocatorsExample_Byxpath_TextAndContains" classname="com.bridgelabz.FacebookSeleniumTest" time="30.454"/>
+  <system-out><![CDATA[Width of the image is 537
+Height of the image is 195
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 79.0.3945.36 (3582db32b33893869b8c1339e8f4d9ed1816f143-refs/branch-heads/3945@{#614}) on port 32374
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Jan 11, 2020 3:30:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
