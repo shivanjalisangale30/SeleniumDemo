@@ -2,8 +2,10 @@ package com.bridgelabz;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -115,7 +117,7 @@ public class FacebookSeleniumTest extends BaseClass {
     }
 
     @Test
-    public void LocatorsExample_Byxpath_TextAndContains() throws InterruptedException {
+    public void LocatorsExample_Byxpath() throws InterruptedException {
         driver.get(facebookURL);
         //xPath for user
         String xpUser = "//input[@id='email']";
@@ -139,4 +141,40 @@ public class FacebookSeleniumTest extends BaseClass {
         Thread.sleep(2000);
     }
 
+    @Test
+    public void LocatorsExample_For_Alert() throws InterruptedException, IOException {
+        driver.get(facebookURL);
+        //xPath for user
+        String xpUser = "//input[@id='email']";
+        driver.findElement(By.xpath(xpUser)).sendKeys("9869191658");
+        //xPath for pwd
+        String xpPWD = "//input[@id='pass']";
+        driver.findElement(By.xpath(xpPWD)).sendKeys("sonu&12345");
+        //xPath for login
+        String xpLogin = "//input[@id='u_0_b']";
+        driver.findElement(By.xpath(xpLogin)).click();
+//        WebElement permission = driver.findElement(By.cssSelector("#permissionHeader"));
+        Actions action = new Actions(driver);
+        WebElement block = driver.findElement(By.xpath("//input[@id'permissionHeader']"));
+        action.click(block).perform();
+
+//        System.out.println("Permissiion Header"+permissionHeader);
+//        driver.switchTo().alert().dismiss();
+    }
+
 }
+//md-select
+//    //xPath for image
+//    String xpImage = "//div[@class='_5iyy']//img[@class='img']";
+//    WebElement image = driver.findElement(By.xpath(xpImage));
+//    String widthImage = image.getAttribute("width");
+//        System.out.println("Width of the image is " + widthImage);
+//                String heightImage = image.getAttribute("height");
+//                System.out.println("Height of the image is " + heightImage);
+
+//        Thread.sleep(5000);
+//        TakesScreenshot captueIamge = (TakesScreenshot) driver;
+//        File srcFile = captueIamge.getScreenshotAs(OutputType.FILE);
+//        String imageCapture = new Object() {}.getClass().getEnclosingMethod().getName();
+//        File desFile = new File("/home/admin1/Desktop/SeleniumDemo/Screenshotes/"+imageCapture+".jpg");
+//        FileUtils.copyFile(srcFile,desFile);
